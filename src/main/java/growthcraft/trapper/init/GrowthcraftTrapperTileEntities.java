@@ -10,7 +10,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class GrowthcraftTrapperTileEntities {
 
-    public static final DeferredRegister<TileEntityType<?>> TILE_ENTITIES = new DeferredRegister<>(ForgeRegistries.TILE_ENTITIES, Reference.MODID);
+    public static final DeferredRegister<TileEntityType<?>> TILE_ENTITIES = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, Reference.MODID);
 
     public static RegistryObject<TileEntityType<TileEntityFishtrap>> oakFishtrapTileEntity = null;
     public static RegistryObject<TileEntityType<TileEntityFishtrap>> acaciaFishtrapTileEntity = null;

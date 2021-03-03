@@ -13,7 +13,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 public class GrowthcraftTrapperBlocks {
 
-    public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, Reference.MODID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Reference.MODID);
 
     public static final RegistryObject<BlockOakFishtrap> FISHTRAP_OAK = BLOCKS.register(
             UnlocalizedName.FISHTRAP_OAK,

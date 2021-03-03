@@ -10,8 +10,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class GrowthcraftTrapperSoundsEvents {
 
-    public static final DeferredRegister<SoundEvent> SOUND_EVENTS =
-            new DeferredRegister<>(ForgeRegistries.SOUND_EVENTS, Reference.MODID);
+    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, Reference.MODID);
 
     public static final RegistryObject<SoundEvent> fishtrapOpen;
 

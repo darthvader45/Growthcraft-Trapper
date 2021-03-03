@@ -38,7 +38,7 @@ public class ScreenFishtrap extends ContainerScreen<ContainerFishtrap> {
     protected void drawGuiContainerForegroundLayer(MatrixStack matrixStack, int mouseX, int mouseY) {
         super.drawGuiContainerForegroundLayer(matrixStack, mouseX, mouseY);
         this.font.drawString(matrixStack, this.title.getUnformattedComponentText(), 8.0F, 6.0F, FONT_COLOR);
-        this.font.drawString(matrixStack, this.playerInventory.getDisplayName().getUnformattedComponentText(), 8.0F, 40F, FONT_COLOR);
+        this.font.drawString(matrixStack, this.playerInventory.getDisplayName().getUnformattedComponentText(), 8.0F, 20F, FONT_COLOR);
     }
 
     @Override

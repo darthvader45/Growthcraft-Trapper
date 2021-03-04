@@ -2,6 +2,8 @@ name: Growthcraft Build and Analyze
 
 on:
   push:
+    branches:
+      - '*'
     tags-ignore:
       - '6.*'
 

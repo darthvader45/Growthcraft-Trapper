@@ -5,6 +5,7 @@ on:
     branches:
       - '*'
     tags-ignore:
+      - '5.*'
       - '6.*'
 
 jobs:

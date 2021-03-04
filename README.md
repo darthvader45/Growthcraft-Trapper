@@ -1,6 +1,6 @@
 ![Growthcraft Trapper](https://github.com/GrowthcraftCE/Growthcraft-Trapper/blob/1.16/src/main/resources/growthcraft_fishtrap_logo.png)
 
-# Growthcraft 6 for Minecraft 1.16 (Forge)
+# Growthcraft Trapper 6 for Minecraft 1.16 (Forge)
 [![Version](https://img.shields.io/badge/Growthcraft-6.0.0-orange.svg)](https://github.com/GrowthcraftCE/Growthcraft-Trapper)
 [![](http://cf.way2muchnoise.eu/versions/growthcraft-community-edition_latest.svg)](https://minecraft.curseforge.com/projects/growthcraft-community-edition/)
 [![](http://cf.way2muchnoise.eu/short_growthcraft-community-edition.svg)](https://minecraft.curseforge.com/projects/growthcraft-community-edition/)

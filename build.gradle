@@ -22,7 +22,7 @@ apply plugin: 'org.sonarqube'
 
 sonarqube {
     properties {
-        property "sonar.projectKey", "GrowthcraftCE_Growthcraft-Trapper-1.16"
+        property "sonar.projectKey", "Growthcraft-Trapper-1.16"
         property "sonar.organization", "growthcraftce"
         property "sonar.host.url", "https://sonarcloud.io"
     }

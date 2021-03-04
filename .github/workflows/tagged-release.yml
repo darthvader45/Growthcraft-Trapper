@@ -1,8 +1,7 @@
-name: Growthcraft Tagged Release
+name: Growthcraft Build and Release
 
 on:
   push:
-    # Sequence of patterns matched against refs/tags
     tags:
       - '*'
 

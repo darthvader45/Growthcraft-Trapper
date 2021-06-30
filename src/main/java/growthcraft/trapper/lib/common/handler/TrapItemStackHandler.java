@@ -16,6 +16,9 @@ public class TrapItemStackHandler extends ItemStackHandler {
     public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
         // TODO: Handle slot 0 as the bait slot only.
         //  User should not be able to insert into slot 1 through 5
+        if(slot >= 1 && slot <= 5){
+            return false;
+        }
         return super.isItemValid(slot, stack);
     }
 

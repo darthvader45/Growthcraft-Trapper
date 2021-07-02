@@ -19,7 +19,13 @@ public class GrowthcraftTrapperConfig {
     public static final ForgeConfigSpec SERVER;
     public static final ForgeConfigSpec CLIENT;
 
+    private static ForgeConfigSpec.BooleanValue unlockFishtrapOutputSlots;
+
     static {
+
+        unlockFishtrapOutputSlots =
+                SERVER_BUILDER.comment("Set to true to unlock the Fishtrap output slots.").define("fishtrap.unlockOutputSlots", false);
+
         SERVER = SERVER_BUILDER.build();
         CLIENT = CLIENT_BUILDER.build();
     }
@@ -38,5 +44,14 @@ public class GrowthcraftTrapperConfig {
         fileConfig.load();
         configSpec.setConfig(fileConfig);
     }
+
+    public static void initConfig(ForgeConfigSpec.Builder server, ForgeConfigSpec.Builder client) {
+
+    }
+
+    public static boolean fishtrapOutputSlotsUnlocked() {
+        return unlockFishtrapOutputSlots.get();
+    }
+
 
 }

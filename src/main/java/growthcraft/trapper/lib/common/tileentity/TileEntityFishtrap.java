@@ -2,6 +2,7 @@ package growthcraft.trapper.lib.common.tileentity;
 
 import growthcraft.trapper.init.GrowthcraftTrapperTileEntities;
 import growthcraft.trapper.lib.common.block.FishtrapBlock;
+import growthcraft.trapper.lib.common.handler.TrapItemStackHandler;
 import growthcraft.trapper.lib.common.inventory.ContainerFishtrap;
 import growthcraft.trapper.lib.utils.BlockStateUtils;
 import growthcraft.trapper.lib.utils.TickUtils;

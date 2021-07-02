@@ -4,7 +4,7 @@ issueTrackerURL = "https://github.com/GrowthcraftCE/Growthcraft-1.15-Trapper/iss
 
 [[mods]]
 modId = "growthcraft_trapper"
-version = "5.0.0"
+version = "5.1.0"
 displayName = "Growthcraft"
 updateJSONURL = "https://raw.githubusercontent.com/GrowthcraftCE/Growthcraft-Updates/master/growthcraft-trapper-versions.json"
 displayURL = "https://github.com/GrowthcraftCE/Growthcraft-1.15-Trapper/wiki"

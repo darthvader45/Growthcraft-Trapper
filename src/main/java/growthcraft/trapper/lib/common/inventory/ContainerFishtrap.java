@@ -34,7 +34,7 @@ public class ContainerFishtrap extends Container {
         int startX = 44;
         int startY = 20;
         for (int i = 0; i < 6; i++) {
-            Slot slot = new Slot(tileEntityFishtrap, index, startX + (i * slotSizePlus2), startY);
+            Slot slot = new FishtrapOutputSlot(tileEntityFishtrap, index, startX + (i * slotSizePlus2), startY);
             this.addSlot(slot);
             index++;
         }

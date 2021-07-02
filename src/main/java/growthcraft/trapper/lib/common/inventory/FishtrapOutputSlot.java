@@ -1,6 +1,6 @@
 package growthcraft.trapper.lib.common.inventory;
 
-import net.minecraft.entity.player.PlayerEntity;
+import growthcraft.trapper.init.config.GrowthcraftTrapperConfig;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
@@ -11,8 +11,9 @@ public class FishtrapOutputSlot extends Slot {
         super(inventoryIn, slotIndex, xPosition, yPosition);
     }
 
+    @Override
     public boolean isItemValid(ItemStack stack){
-        return false;
+        return GrowthcraftTrapperConfig.fishtrapOutputSlotsUnlocked();
     }
 
 }

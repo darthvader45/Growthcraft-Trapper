@@ -1,7 +1,7 @@
 ![Growthcraft Traffer](https://github.com/GrowthcraftCE/Growthcraft-1.15-Trapper/blob/release/src/main/resources/growthcraft_fishtrap_logo.png)
 
 # Growthcraft 5 for Minecraft 1.15.2 (Forge)
-[![Growthcraft Version](https://img.shields.io/badge/Growthcraft-5.0.0-orange.svg)](https://github.com/GrowthcraftCE/Growthcraft-1.15)
+[![Growthcraft Version](https://img.shields.io/badge/Growthcraft-5.1.0-orange.svg)](https://github.com/GrowthcraftCE/Growthcraft-1.15)
 [![](http://cf.way2muchnoise.eu/versions/growthcraft-community-edition_latest.svg)](https://minecraft.curseforge.com/projects/growthcraft-community-edition/)
 [![](http://cf.way2muchnoise.eu/short_growthcraft-community-edition.svg)](https://minecraft.curseforge.com/projects/growthcraft-community-edition/)
 [![Forge Version](https://img.shields.io/badge/Minecraft%20Forge-31.2.0-yellow.svg)](http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.15.2.html)
@@ -20,5 +20,5 @@ To Be Written
 
 ### Growthcraft Trapper 5 (Minecraft 1.15.2)
 End of Support: TBD
-Latest Version: 5.0.0
+Latest Version: 5.1.0
 Stable Version: TBD

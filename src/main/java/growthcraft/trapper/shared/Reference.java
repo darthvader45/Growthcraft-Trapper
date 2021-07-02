@@ -5,7 +5,7 @@ public class Reference {
     public static final String NAME = "Growthcraft Trapper";
     public static final String NAME_SHORT = "trapper";
 
-    public static final String VERSION = growthcraft.trapper.shared.Reference.VERSION;
+    public static final String VERSION = "5.1.0";
 
     private Reference() { /* Prevent default public constructor */ }
 }

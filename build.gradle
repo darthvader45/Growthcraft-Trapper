@@ -6,7 +6,7 @@ buildscript {
         maven { url = "https://oss.sonatype.org/content/repositories/snapshots/" }
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1.+', changing: true
         classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.7'
     }
 }
@@ -105,7 +105,7 @@ dependencies {
      *  Include mods the we need while testing during runtime. When adding mods
      *  to this list, place the version into the gradle.properties file.
      */
-    runtime fg.deobf("mezz.jei:jei-${minecraft_version_1_16_4}:${jei_version}")
+    runtime fg.deobf("mezz.jei:jei-${minecraft_version}:${jei_version}")
     runtime fg.deobf("mcjty.theoneprobe:TheOneProbe-${minecraft_version_short}:${minecraft_version_short}-${theoneprobe_version}")
     runtime fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
 

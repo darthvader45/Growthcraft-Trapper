@@ -1,11 +1,11 @@
 modLoader="javafml"
 loaderVersion="[36,)"
-license="GNU General Public License v3.0"
-issueTrackerURL = "https://github.com/GrowthcraftCE/Growthcraft-1.15-Trapper/issues"
+license = "GNU General Public License v3.0"
+issueTrackerURL = "https://github.com/GrowthcraftCE/Growthcraft-Trapper/issues"
 
 [[mods]]
 modId = "growthcraft_trapper"
-version = "6.0.0"
+version = "6.1.0"
 displayName = "Growthcraft Trapper"
 updateJSONURL = "https://raw.githubusercontent.com/GrowthcraftCE/Growthcraft-Updates/master/growthcraft-trapper-versions.json"
 displayURL = "https://github.com/GrowthcraftCE/Growthcraft-Trapper/wiki"

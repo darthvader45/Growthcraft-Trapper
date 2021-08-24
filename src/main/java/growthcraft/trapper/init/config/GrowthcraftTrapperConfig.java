@@ -22,6 +22,8 @@ public class GrowthcraftTrapperConfig {
     private static ForgeConfigSpec.BooleanValue unlockFishtrapOutputSlots;
 
     static {
+        SERVER_BUILDER.comment(String.format("General configuration for %s", Reference.NAME)).define(
+                "version", Reference.VERSION);
 
         unlockFishtrapOutputSlots =
                 SERVER_BUILDER.comment("Set to true to unlock the Fishtrap output slots.").define("fishtrap.unlockOutputSlots", false);
@@ -52,6 +54,5 @@ public class GrowthcraftTrapperConfig {
     public static boolean fishtrapOutputSlotsUnlocked() {
         return unlockFishtrapOutputSlots.get();
     }
-
 
 }

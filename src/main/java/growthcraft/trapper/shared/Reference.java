@@ -21,6 +21,8 @@ public class Reference {
     private Reference() { /* Prevent default public constructor */ }
 
     public static class UnlocalizedName {
+        public static final String FISHTRAP = "fishtrap";
+
         public static final String FISHTRAP_CONTAINER = "fishtrap_container";
         public static final String FISHTRAP_OAK = "fishtrap_oak";
         public static final String FISHTRAP_ACACIA = "fishtrap_acacia";

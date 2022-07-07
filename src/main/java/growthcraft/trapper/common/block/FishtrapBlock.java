@@ -1,5 +1,7 @@
 package growthcraft.trapper.common.block;
 
+import growthcraft.trapper.common.block.entity.FishtrapBlockEntity;
+import growthcraft.trapper.init.GrowthcraftBlockEntities;
 import growthcraft.trapper.utils.BlockPropertiesUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -10,10 +12,10 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DirectionalBlock;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -23,8 +25,9 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.Nullable;
 
-public class FishtrapBlock extends Block implements SimpleWaterloggedBlock {
+public class FishtrapBlock extends Block implements SimpleWaterloggedBlock, EntityBlock {
 
     public static final DirectionProperty FACING = DirectionalBlock.FACING;
 
@@ -71,5 +74,19 @@ public class FishtrapBlock extends Block implements SimpleWaterloggedBlock {
         return Boolean.TRUE.equals(blockState.getValue(WATERLOGGED))
                 ? Fluids.WATER.getSource(false)
                 : super.getFluidState(blockState);
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
+        return GrowthcraftBlockEntities.FISHTRAP_BLOCK_ENTITY.get().create(blockPos, blockState);
+    }
+
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState blockState, BlockEntityType<T> blockEntityType) {
+        return level.isClientSide
+                ? null
+                : (worldLevel, pos, state, blockEntity) -> ((FishtrapBlockEntity) blockEntity).tick();
     }
 }

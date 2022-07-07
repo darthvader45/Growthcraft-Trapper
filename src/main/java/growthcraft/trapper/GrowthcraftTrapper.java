@@ -1,5 +1,6 @@
 package growthcraft.trapper;
 
+import growthcraft.trapper.init.GrowthcraftBlockEntities;
 import growthcraft.trapper.init.GrowthcraftTrapperBlocks;
 import growthcraft.trapper.init.client.GrowthcraftTrapperBlockRenders;
 import growthcraft.trapper.shared.Reference;
@@ -17,8 +18,6 @@ import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static growthcraft.trapper.init.GrowthcraftTrapperBlocks.BLOCKS;
-
 @Mod(Reference.MODID)
 @Mod.EventBusSubscriber(modid = Reference.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class GrowthcraftTrapper {
@@ -29,7 +28,8 @@ public class GrowthcraftTrapper {
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::clientSetupEvent);
 
-        BLOCKS.register(modEventBus);
+        GrowthcraftTrapperBlocks.BLOCKS.register(modEventBus);
+        GrowthcraftBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }

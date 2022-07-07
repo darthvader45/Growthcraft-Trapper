@@ -54,7 +54,7 @@ public class FishtrapBlockEntity extends BlockEntity implements BlockEntityTicke
             tickCooldown = TickUtils.getRandomTickCooldown(minTickFishing, maxTickFishing);
         }
 
-        GrowthcraftTrapper.LOGGER.error("ticking ...");
+        GrowthcraftTrapper.LOGGER.error(String.format("ticking ... %d / %d", tickClock, tickCooldown));
 
     }
 

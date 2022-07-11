@@ -32,6 +32,7 @@ public class FishtrapBlockEntity extends BlockEntity implements BlockEntityTicke
     private final int maxTickFishing = TickUtils.toTicks(1, "minutes");
     private int tickClock = 0;
     private int tickCooldown = 0;
+    private Float doFishingBonus = 1.0F;
 
     public FishtrapBlockEntity(BlockPos blockPos, BlockState blockState) {
         super(GrowthcraftBlockEntities.FISHTRAP_BLOCK_ENTITY.get(), blockPos, blockState);
@@ -44,17 +45,22 @@ public class FishtrapBlockEntity extends BlockEntity implements BlockEntityTicke
     }
 
     @Override
+    @ParametersAreNonnullByDefault
     public void tick(Level level, BlockPos blockPos, BlockState blockState, FishtrapBlockEntity fishtrapBlockEntity) {
         if (level.isClientSide) return;
 
-        tickClock++;
-        if (tickClock >= tickCooldown && canDoFishing(level, blockPos)) {
-            this.doFishing();
-            tickClock = 0;
-            tickCooldown = TickUtils.getRandomTickCooldown(minTickFishing, maxTickFishing);
-        }
+        if (canDoFishing(level, blockPos)) {
+            tickClock++;
+            if (tickClock >= tickCooldown) {
+                this.doFishing();
+                tickClock = 0;
 
-        GrowthcraftTrapper.LOGGER.error(String.format("ticking ... %d / %d", tickClock, tickCooldown));
+                // Round it down to the nearest int through casting.
+                tickCooldown = (int) (TickUtils.getRandomTickCooldown(minTickFishing, maxTickFishing) * doFishingBonus);
+            }
+
+            GrowthcraftTrapper.LOGGER.error(String.format("ticking ... %d / %d", tickClock, tickCooldown));
+        }
 
     }
 
@@ -69,10 +75,9 @@ public class FishtrapBlockEntity extends BlockEntity implements BlockEntityTicke
     private boolean canDoFishing(Level level, BlockPos pos) {
         Map<String, Block> blockMap = BlockStateUtils.getSurroundingBlocks(level, pos);
 
-        // Scenario 1 - BlockUp and BlockDown are water.
-        if (blockMap.get("down") instanceof LiquidBlock
-                && blockMap.get("up") instanceof LiquidBlock) {
-            return true;
+        // In order to catch fish we need to be in some kind of fluid.
+        if (this.getBlockState().getValue(BlockStateProperties.WATERLOGGED).equals(Boolean.FALSE)) {
+            return false;
         }
 
         // Scenario 2 - BlockNorth, BlockEast, BlockSouth, and BlockWest are water.
@@ -80,20 +85,24 @@ public class FishtrapBlockEntity extends BlockEntity implements BlockEntityTicke
                 && blockMap.get("east") instanceof LiquidBlock
                 && blockMap.get("south") instanceof LiquidBlock
                 && blockMap.get("west") instanceof LiquidBlock) {
+            doFishingBonus = 0.8f;
             return true;
         }
 
-        // Scenario 3 - Horizontal blocks are Water and Block is WATERLOGGED.
-        boolean eastWest = blockMap.get("east") instanceof LiquidBlock
-                && blockMap.get("west") instanceof LiquidBlock;
-        boolean northSouth = blockMap.get("north") instanceof LiquidBlock
-                && blockMap.get("south") instanceof LiquidBlock;
+        // Scenario 1 - BlockUp and BlockDown are water.
+        if (blockMap.get("down") instanceof LiquidBlock
+                && blockMap.get("up") instanceof LiquidBlock) {
+            doFishingBonus = 1.0f;
+            return true;
+        }
 
-        return (eastWest || northSouth) && this.getBlockState().getValue(BlockStateProperties.WATERLOGGED).equals(Boolean.TRUE);
+        return false;
     }
 
     private void doFishing() {
         this.getLevel().playSound((Player) null, this.worldPosition, SoundEvents.FISHING_BOBBER_RETRIEVE, SoundSource.BLOCKS, 1.0f, 1.0f);
+
+        // Get loot tables depending on the type of bait used.
 
     }
 

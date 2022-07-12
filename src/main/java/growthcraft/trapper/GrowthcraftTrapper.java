@@ -1,6 +1,6 @@
 package growthcraft.trapper;
 
-import growthcraft.trapper.init.GrowthcraftBlockEntities;
+import growthcraft.trapper.init.GrowthcraftTrapperBlockEntities;
 import growthcraft.trapper.init.GrowthcraftTrapperBlocks;
 import growthcraft.trapper.init.client.GrowthcraftTrapperBlockRenders;
 import growthcraft.trapper.shared.Reference;
@@ -29,7 +29,7 @@ public class GrowthcraftTrapper {
         modEventBus.addListener(this::clientSetupEvent);
 
         GrowthcraftTrapperBlocks.BLOCKS.register(modEventBus);
-        GrowthcraftBlockEntities.BLOCK_ENTITIES.register(modEventBus);
+        GrowthcraftTrapperBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }

@@ -1,4 +1,4 @@
-package growthcraft.trapper.common.block.entity;
+package growthcraft.trapper.block.entity;
 
 import growthcraft.lib.utils.BlockStateUtils;
 import growthcraft.lib.utils.TickUtils;

@@ -1,6 +1,6 @@
 package growthcraft.trapper.init;
 
-import growthcraft.trapper.common.block.entity.FishtrapBlockEntity;
+import growthcraft.trapper.block.entity.FishtrapBlockEntity;
 import growthcraft.trapper.shared.Reference;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;

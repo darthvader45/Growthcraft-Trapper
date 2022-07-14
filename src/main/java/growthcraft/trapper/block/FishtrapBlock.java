@@ -1,7 +1,7 @@
-package growthcraft.trapper.common.block;
+package growthcraft.trapper.block;
 
 import growthcraft.trapper.GrowthcraftTrapper;
-import growthcraft.trapper.common.block.entity.FishtrapBlockEntity;
+import growthcraft.trapper.block.entity.FishtrapBlockEntity;
 import growthcraft.trapper.init.GrowthcraftTrapperBlockEntities;
 import growthcraft.trapper.utils.BlockPropertiesUtils;
 import net.minecraft.core.BlockPos;

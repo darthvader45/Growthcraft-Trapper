@@ -1,7 +1,7 @@
 package growthcraft.trapper.init;
 
 import growthcraft.trapper.GrowthcraftTrapper;
-import growthcraft.trapper.common.block.FishtrapBlock;
+import growthcraft.trapper.block.FishtrapBlock;
 import growthcraft.trapper.shared.Reference;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;

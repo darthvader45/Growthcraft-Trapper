@@ -5,6 +5,7 @@ import growthcraft.lib.utils.TickUtils;
 import growthcraft.trapper.GrowthcraftTrapper;
 import growthcraft.trapper.init.GrowthcraftTrapperBlockEntities;
 import growthcraft.trapper.init.GrowthcraftTrapperTags;
+import growthcraft.trapper.screen.FishtrapMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -88,7 +89,7 @@ public class FishtrapBlockEntity extends BlockEntity implements BlockEntityTicke
             tickCooldown = TickUtils.getRandomTickCooldown(minTickFishing, maxTickFishing);
         }
 
-        GrowthcraftTrapper.LOGGER.error(String.format("ticking ... %d / %d", tickClock, tickCooldown));
+        //GrowthcraftTrapper.LOGGER.error(String.format("ticking ... %d / %d", tickClock, tickCooldown));
 
     }
 
@@ -227,7 +228,7 @@ public class FishtrapBlockEntity extends BlockEntity implements BlockEntityTicke
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int containerId, Inventory inventory, Player player) {
-        return null;
+        return new FishtrapMenu(containerId, inventory, this);
     }
 
     @NotNull

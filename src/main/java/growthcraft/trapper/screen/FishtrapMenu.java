@@ -1,7 +1,8 @@
 package growthcraft.trapper.screen;
 
+import growthcraft.trapper.block.FishtrapBlock;
 import growthcraft.trapper.block.entity.FishtrapBlockEntity;
-import growthcraft.trapper.init.GrowthcraftTrapperBlocks;
+import growthcraft.trapper.init.GrowthcraftTrapperMenus;
 import growthcraft.trapper.screen.slot.ResultSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -18,6 +19,8 @@ import net.minecraftforge.items.SlotItemHandler;
 public class FishtrapMenu extends AbstractContainerMenu {
 
     private final FishtrapBlockEntity fishtrapBlockEntity;
+    private final FishtrapBlock fishtrapBlock;
+
     private final Level level;
 
     public FishtrapMenu(int containerId, Inventory inventory, FriendlyByteBuf extraData) {
@@ -25,17 +28,22 @@ public class FishtrapMenu extends AbstractContainerMenu {
     }
 
     public FishtrapMenu(int containerId, Inventory inventory, BlockEntity blockEntity) {
-        super(menuType, containerId);
+        super(GrowthcraftTrapperMenus.FISHTRAP_MENU.get(), containerId);
 
         checkContainerSize(inventory, 7);
         this.fishtrapBlockEntity = (FishtrapBlockEntity) blockEntity;
+        this.fishtrapBlock = (FishtrapBlock) inventory.player.level.getBlockEntity(this.fishtrapBlockEntity.getBlockPos()).getBlockState().getBlock();
+
         this.level = inventory.player.level;
 
         addPlayerInventory(inventory);
         addPlayerHotbar(inventory);
 
+        // Add our block's inventory slots.
         this.fishtrapBlockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-                    this.addSlot(new SlotItemHandler(handler, 0, 17, 20));
+            // 1 Input Slot
+            this.addSlot(new SlotItemHandler(handler, 0, 17, 20));
+            // 6 Output Slots
                     for (int i = 0; i < 6; i++) {
                         this.addSlot(new ResultSlot(handler, i + 1, 44 + (i * 18), 20));
                     }
@@ -101,7 +109,7 @@ public class FishtrapMenu extends AbstractContainerMenu {
                         this.fishtrapBlockEntity.getBlockPos()
                 ),
                 player,
-                GrowthcraftTrapperBlocks.FISHTRAP_OAK.get()
+                this.fishtrapBlock
         );
     }
 

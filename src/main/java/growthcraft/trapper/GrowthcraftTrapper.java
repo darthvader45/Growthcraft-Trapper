@@ -2,6 +2,7 @@ package growthcraft.trapper;
 
 import growthcraft.trapper.init.GrowthcraftTrapperBlockEntities;
 import growthcraft.trapper.init.GrowthcraftTrapperBlocks;
+import growthcraft.trapper.init.GrowthcraftTrapperMenus;
 import growthcraft.trapper.init.client.GrowthcraftTrapperBlockRenders;
 import growthcraft.trapper.shared.Reference;
 import net.minecraft.world.item.Item;
@@ -30,7 +31,8 @@ public class GrowthcraftTrapper {
 
         GrowthcraftTrapperBlocks.BLOCKS.register(modEventBus);
         GrowthcraftTrapperBlockEntities.BLOCK_ENTITIES.register(modEventBus);
-
+        GrowthcraftTrapperMenus.MENUS.register(modEventBus)
+        ;
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -40,6 +42,7 @@ public class GrowthcraftTrapper {
 
     private void clientSetupEvent(final FMLClientSetupEvent event) {
         GrowthcraftTrapperBlockRenders.registerBlockRenders();
+        GrowthcraftTrapperMenus.registerMenus();
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

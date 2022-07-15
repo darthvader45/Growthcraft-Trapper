@@ -1,7 +1,9 @@
 package growthcraft.trapper.init;
 
 import growthcraft.trapper.screen.FishtrapMenu;
+import growthcraft.trapper.screen.FishtrapScreen;
 import growthcraft.trapper.shared.Reference;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
@@ -10,7 +12,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class GrowthcraftMenuTypes {
+public class GrowthcraftTrapperMenus {
 
     public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(
             ForgeRegistries.CONTAINERS, Reference.MODID
@@ -22,6 +24,10 @@ public class GrowthcraftMenuTypes {
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(
             String name, IContainerFactory<T> factory) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));
+    }
+
+    public static void registerMenus() {
+        MenuScreens.register(FISHTRAP_MENU.get(), FishtrapScreen::new);
     }
 
 }

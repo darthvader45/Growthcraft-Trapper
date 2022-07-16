@@ -61,7 +61,7 @@ public class FishtrapBlock extends BaseEntityBlock implements SimpleWaterloggedB
 
         }
 
-        return InteractionResult.PASS;
+        return InteractionResult.SUCCESS;
     }
 
     @Override

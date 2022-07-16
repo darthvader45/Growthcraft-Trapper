@@ -88,9 +88,6 @@ public class FishtrapBlockEntity extends BlockEntity implements BlockEntityTicke
             tickClock = 0;
             tickCooldown = TickUtils.getRandomTickCooldown(minTickFishing, maxTickFishing);
         }
-
-        //GrowthcraftTrapper.LOGGER.error(String.format("ticking ... %d / %d", tickClock, tickCooldown));
-
     }
 
     /**
@@ -133,25 +130,38 @@ public class FishtrapBlockEntity extends BlockEntity implements BlockEntityTicke
 
         LootContext.Builder lootContext$builder = new LootContext.Builder((ServerLevel) level).withRandom(new SecureRandom());
 
+        String lootTableType = "";
         LootTable lootTable;
 
         // Check if this is fortune based bait.
         if (baitItemStack.is(GrowthcraftTrapperTags.Items.FISHTRAP_BAIT_FORTUNE)) {
             // Fish from the Fortune Loot Table
-            lootTable = getLootTable("fortune");
+            lootTableType = "fortune";
             lootContext$builder.withLuck(3.0f);
         } else if (baitItemStack.is(GrowthcraftTrapperTags.Items.FISHTRAP_BAIT)) {
             // Fish from the Standard Loot Table
-            lootTable = getLootTable("standard");
+            lootTableType = "standard";
         } else {
             // Fish from the Junk Loot Table
-            lootTable = getLootTable("junk");
+            lootTableType = "junk";
         }
+
+        lootTable = getLootTable(lootTableType);
 
         List<ItemStack> lootItemStacks = lootTable.getRandomItems(lootContext$builder.create(LootContextParamSets.EMPTY));
         for (ItemStack itemStack : lootItemStacks) {
-            GrowthcraftTrapper.LOGGER.warn(String.format("Caught a %s", itemStack));
+            GrowthcraftTrapper.LOGGER.warn(String.format("Caught a %s from %s loot table.", itemStack, lootTableType));
+
+            for (int i = 1; i < itemStackHandler.getSlots(); i++) {
+                ItemStack storedItemStack = itemStackHandler.getStackInSlot(i);
+                if (itemStackHandler.getStackInSlot(i).isEmpty() || storedItemStack.getItem() == itemStack.getItem()) {
+                    itemStackHandler.insertItem(i, itemStack, false);
+                    break;
+                }
+            }
         }
+
+        itemStackHandler.getStackInSlot(0).shrink(1);
 
         this.getLevel().playSound((Player) null, this.worldPosition, SoundEvents.FISHING_BOBBER_RETRIEVE, SoundSource.BLOCKS, 1.0f, 1.0f);
 

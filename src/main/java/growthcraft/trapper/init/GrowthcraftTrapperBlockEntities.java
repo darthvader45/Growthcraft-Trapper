@@ -16,7 +16,13 @@ public class GrowthcraftTrapperBlockEntities {
     public static final RegistryObject<BlockEntityType<FishtrapBlockEntity>> FISHTRAP_BLOCK_ENTITY = BLOCK_ENTITIES.register(
             Reference.UnlocalizedName.FISHTRAP,
             () -> BlockEntityType.Builder.of(FishtrapBlockEntity::new,
-                    GrowthcraftTrapperBlocks.FISHTRAP_OAK.get()
+                    GrowthcraftTrapperBlocks.FISHTRAP_BIRCH.get(),
+                    GrowthcraftTrapperBlocks.FISHTRAP_ACACIA.get(),
+                    GrowthcraftTrapperBlocks.FISHTRAP_DARK_OAK.get(),
+                    GrowthcraftTrapperBlocks.FISHTRAP_OAK.get(),
+                    GrowthcraftTrapperBlocks.FISHTRAP_JUNGLE.get(),
+                    GrowthcraftTrapperBlocks.FISHTRAP_SPRUCE.get()
+
             ).build(null)
     );
 

@@ -20,6 +20,31 @@ public class GrowthcraftTrapperBlocks {
             FishtrapBlock::new
     );
 
+    public static final RegistryObject<FishtrapBlock> FISHTRAP_ACACIA = BLOCKS.register(
+            Reference.UnlocalizedName.FISHTRAP_ACACIA,
+            FishtrapBlock::new
+    );
+
+    public static final RegistryObject<FishtrapBlock> FISHTRAP_DARK_OAK = BLOCKS.register(
+            Reference.UnlocalizedName.FISHTRAP_DARK_OAK,
+            FishtrapBlock::new
+    );
+
+    public static final RegistryObject<FishtrapBlock> FISHTRAP_BIRCH = BLOCKS.register(
+            Reference.UnlocalizedName.FISHTRAP_BIRCH,
+            FishtrapBlock::new
+    );
+
+    public static final RegistryObject<FishtrapBlock> FISHTRAP_SPRUCE = BLOCKS.register(
+            Reference.UnlocalizedName.FISHTRAP_SPRUCE,
+            FishtrapBlock::new
+    );
+
+    public static final RegistryObject<FishtrapBlock> FISHTRAP_JUNGLE = BLOCKS.register(
+            Reference.UnlocalizedName.FISHTRAP_JUNGLE,
+            FishtrapBlock::new
+    );
+
     /**
      * Dynamically register Growthcraft Decorations BlockItems.
      *

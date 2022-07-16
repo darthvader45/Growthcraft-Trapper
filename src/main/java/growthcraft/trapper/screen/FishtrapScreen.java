@@ -35,5 +35,16 @@ public class FishtrapScreen extends AbstractContainerScreen<FishtrapMenu> {
         renderBackground(poseStack);
         super.render(poseStack, mouseX, mouseY, delta);
         renderTooltip(poseStack, mouseX, mouseY);
+
+        //this.font.draw(poseStack, this.title, 8.0F, 5.0F, 0x404040);
+        //this.font.draw(poseStack, this.playerInventoryTitle, 8.0F, this.topPos + 75, 0x404040);
+    }
+
+    @Override
+    protected void renderLabels(PoseStack p_97808_, int p_97809_, int p_97810_) {
+        // Do nothing as this isn't a standard size GUI.
+        // We will have to render the GUI title and inventory label ourselves.
+        this.font.draw(p_97808_, this.title, (float) this.titleLabelX, (float) this.titleLabelY, 4210752);
+        this.font.draw(p_97808_, this.playerInventoryTitle, (float) this.inventoryLabelX, (float) this.inventoryLabelY - 32, 4210752);
     }
 }

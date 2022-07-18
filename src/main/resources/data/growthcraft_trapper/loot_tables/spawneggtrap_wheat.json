@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 44,
+          "name": "minecraft:cow_spawn_egg"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 20,
+          "name": "minecraft:sheep_spawn_egg"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 20,
+          "name": "minecraft:goat_spawn_egg"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 26,
+          "name": "minecraft:air"
+        }
+      ]
+    }
+  ]
+}

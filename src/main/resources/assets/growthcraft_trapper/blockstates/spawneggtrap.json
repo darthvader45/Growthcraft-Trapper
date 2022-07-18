@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "growthcraft_trapper:block/spawneggtrap"
+    },
+    "facing=south": {
+      "model": "growthcraft_trapper:block/spawneggtrap",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "growthcraft_trapper:block/spawneggtrap",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "growthcraft_trapper:block/spawneggtrap",
+      "y": 90
+    },
+    "facing=up": {
+      "model": "growthcraft_trapper:block/spawneggtrap",
+      "x": -90
+    },
+    "facing=down": {
+      "model": "growthcraft_trapper:block/spawneggtrap",
+      "x": 90
+    }
+  }
+}

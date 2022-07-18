@@ -13,6 +13,7 @@ public class GrowthcraftTrapperBlockRenders {
         ItemBlockRenderTypes.setRenderLayer(GrowthcraftTrapperBlocks.FISHTRAP_JUNGLE.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(GrowthcraftTrapperBlocks.FISHTRAP_OAK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(GrowthcraftTrapperBlocks.FISHTRAP_SPRUCE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(GrowthcraftTrapperBlocks.SPAWNEGGTRAP.get(), RenderType.translucent());
     }
 
     private GrowthcraftTrapperBlockRenders() {

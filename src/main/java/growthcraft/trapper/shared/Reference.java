@@ -1,5 +1,6 @@
 package growthcraft.trapper.shared;
 
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -30,6 +31,7 @@ public class Reference {
         public static final String FISHTRAP_JUNGLE = "fishtrap_jungle";
         public static final String FISHTRAP_DARK_OAK = "fishtrap_dark_oak";
         public static final String FISHTRAP_BIRCH = "fishtrap_birch";
+        public static final String SPAWNEGGTRAP = "spawneggtrap";
         public static final String TAG_FISHING_BAIT = "fishing_bait";
 
         public static final String SOUND_FISHTRAP_OPEN = "fishtrap_open";
@@ -38,5 +40,8 @@ public class Reference {
 
     }
 
+    public static class LootTables {
+        public static final ResourceLocation SPAWNEGGTRAP_WHEAT = new ResourceLocation(Reference.MODID, "spawneggtrap_wheat");
+    }
 
 }

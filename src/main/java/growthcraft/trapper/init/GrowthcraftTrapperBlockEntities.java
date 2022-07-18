@@ -1,6 +1,7 @@
 package growthcraft.trapper.init;
 
 import growthcraft.trapper.block.entity.FishtrapBlockEntity;
+import growthcraft.trapper.block.entity.SpawnEggTrapBlockEntity;
 import growthcraft.trapper.shared.Reference;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -23,6 +24,13 @@ public class GrowthcraftTrapperBlockEntities {
                     GrowthcraftTrapperBlocks.FISHTRAP_JUNGLE.get(),
                     GrowthcraftTrapperBlocks.FISHTRAP_SPRUCE.get()
 
+            ).build(null)
+    );
+
+    public static final RegistryObject<BlockEntityType<SpawnEggTrapBlockEntity>> SPAWNEGGTRAP_BLOCK_ENTITY = BLOCK_ENTITIES.register(
+            Reference.UnlocalizedName.SPAWNEGGTRAP,
+            () -> BlockEntityType.Builder.of(SpawnEggTrapBlockEntity::new,
+                    GrowthcraftTrapperBlocks.SPAWNEGGTRAP.get()
             ).build(null)
     );
 

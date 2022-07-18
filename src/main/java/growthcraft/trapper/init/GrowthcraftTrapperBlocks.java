@@ -2,6 +2,7 @@ package growthcraft.trapper.init;
 
 import growthcraft.trapper.GrowthcraftTrapper;
 import growthcraft.trapper.block.FishtrapBlock;
+import growthcraft.trapper.block.SpawnEggTrapBlock;
 import growthcraft.trapper.shared.Reference;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -43,6 +44,11 @@ public class GrowthcraftTrapperBlocks {
     public static final RegistryObject<FishtrapBlock> FISHTRAP_JUNGLE = BLOCKS.register(
             Reference.UnlocalizedName.FISHTRAP_JUNGLE,
             FishtrapBlock::new
+    );
+
+    public static final RegistryObject<SpawnEggTrapBlock> SPAWNEGGTRAP = BLOCKS.register(
+            Reference.UnlocalizedName.SPAWNEGGTRAP,
+            SpawnEggTrapBlock::new
     );
 
     /**
